@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include <stdarg.h>
+#include <unistd.h>
 /**
  * print_int - prints a signed integer
  * @n: integer to print

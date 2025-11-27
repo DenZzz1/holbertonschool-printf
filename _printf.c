@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include <stdarg.h>
+#include <unistd.h>
 /**
  * _printf - custom printf function
  * @format: format string
