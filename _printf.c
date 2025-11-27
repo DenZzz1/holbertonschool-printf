@@ -16,9 +16,9 @@ format++;
 if (*format == 'd' || *format == 'i')
 {
  int n = va_arg(args, int);
-// code pour afficher n en décimal signé ...
+
 }
-// ...
+
 }
 else
 {
