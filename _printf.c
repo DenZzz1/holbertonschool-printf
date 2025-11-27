@@ -15,8 +15,8 @@ if (*format == '%')
 format++;
 if (*format == 'd' || *format == 'i')
 {
- int n = va_arg(args, int);
-
+int n = va_arg(args, int);
+/* Puis traite n, affiche-le, convertis-le, comme prévu */
 }
 
 }
