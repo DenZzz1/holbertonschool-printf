@@ -1,50 +1,32 @@
 #include "main.h"
 #include <stdarg.h>
 #include <unistd.h>
-/**
- * _printf - custom printf function
- * @format: format string
- *
- * Return: number of characters printed
- */
+
 int _printf(const char *format, ...)
 {
 va_list args;
-int i = 0, count = 0;
-
-if (format == NULL)
-return (-1);
+int count = 0;
 
 va_start(args, format);
-
-while (format[i])
+while (*format)
 {
-if (format[i] == '%')
+if (*format == '%')
 {
-i++;
-
-if (format[i] == '\0')
-return (-1);
-
-if (format[i] == 'c')
-count += print_char(args);
-else if (format[i] == 's')
-count += print_string(args);
-else if (format[i] == '%')
-count += write(1, "%", 1);
-else
+format++;
+if (*format == 'd' || *format == 'i')
 {
-count += write(1, "%", 1);
-count += write(1, &format[i], 1);
+ int n = va_arg(args, int);
+// code pour afficher n en décimal signé ...
 }
+// ...
 }
 else
 {
-count += write(1, &format[i], 1);
+write(1, format, 1);
+count++;
 }
-i++;
+format++;
 }
-
 va_end(args);
-return (count);
+return count;
 }
