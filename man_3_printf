@@ -1,0 +1,76 @@
+.TH _PRINTF 3 "November 2025" "Holberton School" "Library Functions Manual"
+.SH NAME
+_printf \- custom implementation of the standard printf function
+
+.SH SYNOPSIS
+.nf
+#include "main.h"
+
+int _printf(const char *format, ...);
+.fi
+
+.SH DESCRIPTION
+The
+.B _printf()
+function produces output according to a format string.
+It writes the output to the standard output stream (stdout).
+
+The function handles zero or more format specifiers.
+Each specifier is introduced by the '%' character.
+
+This simplified version supports the following conversion specifiers:
+
+.TP
+.B %c
+Prints a single character.
+
+.TP
+.B %s
+Prints a string. If the string is NULL, "(null)" is printed.
+
+.TP
+.B %%
+Prints a literal '%' character.
+
+.TP
+.B %d
+Prints a signed decimal integer.
+
+.TP
+.B %i
+Prints a signed decimal integer (same as %d).
+
+.PP
+This implementation does not handle:
+flags, field width, precision, length modifiers, buffers,
+or any specifiers other than those listed above.
+
+.SH RETURN VALUE
+The
+.B _printf()
+function returns the number of characters printed
+(excluding the terminating null byte used to end C strings).
+
+On error, a negative value is returned.
+
+.SH EXAMPLES
+.nf
+_printf("Hello %s\\n", "world");
+     → Prints: Hello world
+
+_printf("Number: %d\\n", 123);
+     → Prints: Number: 123
+
+_printf("Percent: %%\\n");
+     → Prints: Percent: %
+.fi
+
+.SH AUTHORS
+Dényss Paricard, Bernis kourou
+
+.SH SEE ALSO
+printf(3)
+
+.SH NOTES
+This is a simplified academic project and
+should not be used as a replacement for the standard printf.

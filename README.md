@@ -35,19 +35,6 @@ The `_printf` function must handle the following format specifiers:
 - Calls the corresponding handling functions.
 - Manages output and counts printed characters.
 
-### `print_char.c`
-- Handles the `%c` format specifier.
-- Retrieves a character using `va_arg`.
-- Outputs it using `write()`.
-
-### `print_string.c`
-- Handles the `%s` format specifier.
-- Prints a string, or `(null)` if the argument is `NULL`.
-
-### `print_percent.c`
-- Handles the `%%` specifier.
-- Simply prints the `%` character.
-
 ### `print_int.c`
 - Handles `%d` and `%i` format specifiers.
 - Converts signed integers to characters using an internal conversion function.
